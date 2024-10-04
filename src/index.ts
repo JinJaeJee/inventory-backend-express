@@ -5,6 +5,7 @@ import morgan from "morgan"
 import bodyParser from "body-parser"
 import cors from "cors"
 import dashboardRouter from "./routes/dashboardRoutes"
+import productRoutes from "./routes/productRoutes"
 /* Route Import */
 
 
@@ -27,6 +28,7 @@ app.get("/check", (req,res)=> {
 })
 
 app.use("/dashboard", dashboardRouter)
+app.use("/products", productRoutes)
 /* Server */
 
 const port = process.env.PORT || 3001

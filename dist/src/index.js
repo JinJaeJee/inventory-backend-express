@@ -10,6 +10,7 @@ const morgan_1 = __importDefault(require("morgan"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const cors_1 = __importDefault(require("cors"));
 const dashboardRoutes_1 = __importDefault(require("./routes/dashboardRoutes"));
+const productRoutes_1 = __importDefault(require("./routes/productRoutes"));
 /* Route Import */
 /* Configulation */
 dotenv_1.default.config();
@@ -26,6 +27,7 @@ app.get("/check", (req, res) => {
     res.send("API INVENTORY IS RUNNING");
 });
 app.use("/dashboard", dashboardRoutes_1.default);
+app.use("/products", productRoutes_1.default);
 /* Server */
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
